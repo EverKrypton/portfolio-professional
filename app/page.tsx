@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import MascotWalker from '@/components/MascotWalker';
 import { site, skills, projects, services } from '@/lib/site';
 
 const PlayableGame = dynamic(() => import('@/components/PlayableGame'), { ssr: false });
@@ -145,6 +146,7 @@ export default function Page() {
           <span><a href="/sitemap.xml">Sitemap</a> · <a href="/robots.txt">Robots</a> · <a href="/llms.txt">llms.txt</a></span>
         </div>
       </footer>
+      <MascotWalker />
     </>
   );
 }

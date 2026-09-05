@@ -146,8 +146,23 @@ h2.section-title {
 .contact-lines a small { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em; color: var(--faint); text-transform: uppercase; }
 @media (hover: hover) { .contact-lines a:hover { color: var(--gold); } .contact-lines a:hover small { color: var(--gold); } }
 
-footer.site-footer { padding: 28px 0 max(48px, env(safe-area-inset-bottom)); color: var(--faint); font-size: 13px; }
-.foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer.site-footer { padding: 28px 0 max(96px, env(safe-area-inset-bottom)); color: var(--faint); font-size: 13px; }
+
+/* Mascot walker: fixed bottom track, scroll-driven */
+.mascot {
+  position: fixed; left: 14px; bottom: max(10px, env(safe-area-inset-bottom));
+  z-index: 40; pointer-events: none; will-change: transform;
+}
+.mascot svg { display: block; overflow: visible; }
+.mascot .leg { transform-box: fill-box; transform-origin: 50% 0%; }
+.mascot.is-walking .leg-front { animation: stride 0.44s ease-in-out infinite alternate; }
+.mascot.is-walking .leg-back { animation: stride 0.44s ease-in-out infinite alternate-reverse; }
+.mascot.is-idle .arm { animation: phonecheck 2.6s ease-in-out infinite; }
+.mascot.is-idle .phone-glow { animation: glowpulse 2.6s ease-in-out infinite; }
+.mascot .arm { transform-box: fill-box; transform-origin: 20% 20%; }
+@keyframes stride { from { transform: rotate(-16deg); } to { transform: rotate(16deg); } }
+@keyframes phonecheck { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-7deg); } }
+@keyframes glowpulse { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }.foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .foot a { color: var(--faint); }
 @media (hover: hover) { .foot a:hover { color: var(--gold); } }
 
