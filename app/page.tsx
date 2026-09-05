@@ -33,7 +33,7 @@ export default function Page() {
         <div className="container hero" id="top">
           <p className="kicker">{site.availability}</p>
           <h1>
-            Games, bots,<br />websites <strong>&amp; apps</strong> that ship.
+            Games, bots, websites <strong>&amp; apps</strong> that ship.
           </h1>
           <p className="standfirst">
             I&apos;m <strong>{site.name}</strong> — {site.tagline} {site.description}

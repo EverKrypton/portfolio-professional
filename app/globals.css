@@ -54,12 +54,13 @@ a { color: var(--gold); text-decoration: none; }
 
 /* Buttons: sharp, solid, lift on hover */
 .btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-body); font-weight: 600; font-size: 14.5px;
-  padding: 13px 26px; min-height: 48px; border-radius: var(--radius);
-  border: 1px solid var(--gold); cursor: pointer;
-  transition: transform 0.12s var(--ease), background 0.12s var(--ease);
+  display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  font-family: var(--font-body); font-weight: 500; font-size: 0.96rem; line-height: 1;
+  padding: 0 28px; min-height: 52px; border-radius: 2px;
+  border: 1px solid transparent; cursor: pointer; text-decoration: none;
+  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease), border-color 0.18s var(--ease), color 0.18s var(--ease);
 }
+.btn:focus-visible { outline: 2px solid var(--patina); outline-offset: 3px; }
 .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 @media (hover: hover) {
   .btn-primary:hover { background: var(--gold-vivid); border-color: var(--gold-vivid); color: var(--ink); transform: translateY(-1px); }
@@ -81,7 +82,8 @@ a { color: var(--gold); text-decoration: none; }
 .hero h1 strong { font-weight: 600; color: var(--gold); }
 .hero .standfirst { font-size: 17px; color: var(--muted); max-width: 56ch; margin: 0 0 8px; }
 .hero .standfirst strong { color: var(--champagne); font-weight: 600; }
-.hero-cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+.hero-cta { display: grid; gap: 12px; margin-top: 30px; }
+@media (min-width: 640px) { .hero-cta { grid-template-columns: auto auto; justify-content: start; } }
 .hero-facts { display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
 .hero-facts div { border-left: 1px solid var(--rule); padding-left: 16px; }
 .hero-facts b { display: block; font-family: var(--font-display); font-weight: 500; font-size: 30px; color: var(--champagne); line-height: 1.1; }
