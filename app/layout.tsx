@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from 'next';
+import { Alumni_Sans, Albert_Sans } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/site';
+
+const display = Alumni_Sans({ subsets: ['latin'], weight: ['100', '300', '500', '600'], display: 'swap' });
+const bodyFont = Albert_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], display: 'swap' });
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -72,7 +76,6 @@ function jsonLd() {
       url: site.url,
       jobTitle: 'Game Developer, Telegram Bot Developer, Web & App Developer',
       description: site.description,
-      email: `mailto:${site.email}`,
       address: { '@type': 'PostalAddress', addressLocality: 'Remote', addressCountry: 'WW' },
       sameAs: Object.values(site.socials),
       knowsAbout: [
@@ -108,7 +111,7 @@ function jsonLd() {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.className} ${bodyFont.className}`}>
       <head>
         <script
           type="application/ld+json"

@@ -8,8 +8,6 @@ export const site = {
     'Full-stack developer specialized in game development (Phaser, Unity), Telegram bots (Node.js, Python), modern web apps (React, Next.js, WordPress) and cross-platform mobile apps. 5+ years shipping products for startups and clients worldwide.',
   url: 'https://rainhard.vercel.app',
   ogImage: '/og-image.svg',
-  email: 'hello@example.com',
-  phone: '+1 (555) 000-0000',
   location: 'Remote · Worldwide',
   availability: 'Available for freelance & full-time',
   socials: {
