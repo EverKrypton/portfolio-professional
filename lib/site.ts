@@ -1,7 +1,7 @@
 // ★★★ EDIT THIS FILE — all your info in one place ★★★
 export const site = {
-  name: 'Alex Carter',
-  firstName: 'Alex',
+  name: 'OG-Rainhard',
+  firstName: 'OG',
   role: 'Game Developer · Telegram Bot Developer · Web & App Developer',
   tagline: 'I build games, bots, websites and apps that ship fast and scale.',
   description:
@@ -79,28 +79,28 @@ export const projects = [
 
 export const services = [
   {
+    cmd: '/game',
     title: 'Game Development',
-    icon: '🎮',
     points: ['2D web & mobile games with Phaser 4 / Unity', 'Game design, levels, juice & polish', 'Publishing on itch.io, web, App Store'],
   },
   {
+    cmd: '/bot',
     title: 'Telegram Bot Development',
-    icon: '🤖',
     points: ['Stores, payments, support & automation bots', 'Telegram Mini Apps + WebApps', 'Webhooks, scaling, admin panels'],
   },
   {
+    cmd: '/web',
     title: 'Web Development',
-    icon: '🌐',
     points: ['React / Next.js sites with 100 SEO score', 'Landing pages that convert', 'Vercel deploy, analytics, i18n'],
   },
   {
+    cmd: '/app',
     title: 'App Development',
-    icon: '📱',
     points: ['iOS + Android from one codebase (Expo)', 'Offline-first, push, deep links', 'Store submission handled'],
   },
   {
+    cmd: '/cms',
     title: 'WordPress & CMS',
-    icon: '📝',
     points: ['WooCommerce stores, blogs, corporate sites', 'Speed + SEO hardening', 'Headless WordPress + Next.js'],
   },
 ];

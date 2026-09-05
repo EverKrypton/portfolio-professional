@@ -52,6 +52,42 @@ export default function Page() {
           </div>
         </div>
 
+        <div className="strip" aria-label="Technologies">
+          <div className="container strip-inner">
+            <span>Phaser 4</span><span>React</span><span>Next.js</span><span>TypeScript</span><span>Telegram Bots</span><span>WordPress</span><span>Expo</span><span>Unity</span>
+          </div>
+        </div>
+
+        <section className="block" id="standard" aria-labelledby="standard-h">
+          <div className="container">
+            <p className="kicker">The standard</p>
+            <h2 className="section-title" id="standard-h">No templates. No slop.</h2>
+            <p className="section-lede">What most freelancer sites ship — and what leaves my hands instead.</p>
+            <div className="duo">
+              <div className="panel before">
+                <p className="plabel">Before</p>
+                <h3>The usual deliverable.</h3>
+                <ul>
+                  <li>Generic template, purple gradients</li>
+                  <li>4MB of JavaScript before first paint</li>
+                  <li>Lorem ipsum where the copy should be</li>
+                  <li>Contact form that answers never</li>
+                </ul>
+              </div>
+              <div className="panel after">
+                <p className="plabel">After</p>
+                <h3>How I ship.</h3>
+                <ul>
+                  <li><strong>Hand-built</strong>, measured in kilobytes</li>
+                  <li><strong>89kB first load</strong>, game engine on demand</li>
+                  <li><strong>SEO 100</strong> — sitemap, structured data, semantic HTML</li>
+                  <li><strong>Reply in 24 hours</strong>, on Telegram</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="block" id="work" aria-labelledby="work-h">
           <div className="container">
             <p className="kicker">Selected work</p>
@@ -82,13 +118,14 @@ export default function Page() {
         <section className="block" id="services" aria-labelledby="services-h">
           <div className="container">
             <p className="kicker">Services</p>
-            <h2 className="section-title" id="services-h">One developer, full product.</h2>
-            <p className="section-lede">Design, build, deploy and store submission — handled.</p>
-            {services.map((s, i) => (
-              <div key={s.title} className="svc">
-                <h3><span className="n">{String(i + 1).padStart(2, '0')}</span>{s.title}</h3>
+            <h2 className="section-title" id="services-h">Pick a command.</h2>
+            <p className="section-lede">Five ways to hire me. One developer, full product — design, build, deploy.</p>
+            {services.map((s) => (
+              <a key={s.cmd} className="cmd" href="#contact">
+                <div className="cmd-top"><code>{s.cmd}</code><span className="key">↵ hire</span></div>
+                <h3>{s.title}</h3>
                 <p>{s.points.join(' · ')}</p>
-              </div>
+              </a>
             ))}
           </div>
         </section>

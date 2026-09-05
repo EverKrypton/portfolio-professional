@@ -87,6 +87,42 @@ a { color: var(--gold); text-decoration: none; }
 .hero-facts b { display: block; font-family: var(--font-display); font-weight: 500; font-size: 30px; color: var(--champagne); line-height: 1.1; }
 .hero-facts span { font-size: 12.5px; color: var(--faint); }
 
+/* Strip: full-bleed ruled band of mono items (mirrors logo strip) */
+.strip { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); overflow-x: auto; scrollbar-width: none; }
+.strip::-webkit-scrollbar { display: none; }
+.strip-inner { display: flex; align-items: center; gap: 0; min-width: max-content; }
+.strip-inner span {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); padding: 16px 22px; border-right: 1px solid var(--rule); white-space: nowrap;
+}
+.strip-inner span:first-child { border-left: 1px solid var(--rule); }
+
+/* Duo: before / after panels */
+.duo { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.panel { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--lacquer-raised); padding: 24px; }
+.panel .plabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0 0 14px; }
+.panel.before .plabel { color: var(--faint); }
+.panel.after { border-color: var(--gold-deep); }
+.panel.after .plabel { color: var(--gold); }
+.panel h3 { font-family: var(--font-display); font-weight: 500; font-size: 28px; color: var(--champagne); margin: 0 0 10px; line-height: 1.15; }
+.panel ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+.panel ul li { margin-bottom: 6px; }
+.panel.after ul strong { color: var(--champagne); }
+
+/* Commands: service rows styled like a command palette */
+.cmd { display: block; border-top: 1px solid var(--rule); padding: 22px 4px; }
+.cmd:last-child { border-bottom: 1px solid var(--rule); }
+.cmd-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cmd-top code { font-family: var(--font-mono); font-size: 15px; color: var(--gold); }
+.cmd-top .key { font-family: var(--font-mono); font-size: 11px; color: var(--faint); border: 1px solid var(--rule); border-radius: var(--radius); padding: 3px 8px; }
+.cmd h3 { font-size: 16px; font-weight: 600; color: var(--champagne); margin: 8px 0 4px; }
+.cmd p { color: var(--muted); font-size: 15px; margin: 0; }
+@media (hover: hover) {
+  .cmd { transition: background 0.12s var(--ease); }
+  .cmd:hover { background: oklch(84% 0.19 80.46 / 0.04); }
+  .cmd:hover .key { color: var(--gold); border-color: var(--gold-deep); }
+}
+
 /* Sections */
 section.block { padding: 56px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 110px; }
 h2.section-title {
@@ -107,13 +143,6 @@ h2.section-title {
 .work-row p { color: var(--muted); font-size: 15px; margin: 0; max-width: 68ch; }
 .work-row .stack { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .work-row .stack span { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; }
-
-/* Services: two-col definition rows */
-.svc { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 24px 0; border-top: 1px solid var(--rule); }
-.svc:last-child { border-bottom: 1px solid var(--rule); }
-.svc h3 { font-size: 16px; font-weight: 600; color: var(--champagne); margin: 0; }
-.svc h3 .n { font-family: var(--font-mono); font-weight: 400; font-size: 12px; color: var(--faint); margin-right: 12px; letter-spacing: 0.1em; }
-.svc p { color: var(--muted); font-size: 15px; margin: 0; max-width: 64ch; }
 
 /* Stack: plain groups */
 .stack-group { padding: 20px 0; border-top: 1px solid var(--rule); }
@@ -169,6 +198,7 @@ footer.site-footer { padding: 28px 0 max(96px, env(safe-area-inset-bottom)); col
 /* Tablet / desktop */
 @media (min-width: 760px) {
   .container { padding: 0 32px; }
+  .duo { grid-template-columns: 1fr 1fr; }
   .work-row { grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline; }
   .svc { grid-template-columns: 240px 1fr; gap: 24px; align-items: baseline; }
   section.block { padding: 88px 0; }
