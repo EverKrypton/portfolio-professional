@@ -6,7 +6,7 @@ export const site = {
   tagline: 'I build games, bots, websites and apps that ship fast and scale.',
   description:
     'Full-stack developer specialized in game development (Phaser, Unity), Telegram bots (Node.js, Python), modern web apps (React, Next.js, WordPress) and cross-platform mobile apps. 5+ years shipping products for startups and clients worldwide.',
-  url: 'https://your-portfolio.vercel.app',
+  url: 'https://rainhard.vercel.app',
   ogImage: '/og-image.svg',
   email: 'hello@example.com',
   phone: '+1 (555) 000-0000',
