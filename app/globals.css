@@ -31,7 +31,7 @@ body {
 ::selection { background: var(--gold); color: var(--ink); }
 a { color: var(--gold); text-decoration: none; }
 @media (hover: hover) { a:hover { color: var(--gold-vivid); } }
-.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
 .skip { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--ink); padding: 12px 16px; z-index: 99; font-weight: 600; }
 .skip:focus { left: 8px; top: 8px; }
 
@@ -73,11 +73,11 @@ a { color: var(--gold); text-decoration: none; }
 .btn .arrow { width: 16px; height: 8px; flex: none; }
 
 /* Hero: type-led, no game above the fold */
-.hero { padding: 64px 0 52px; border-bottom: 1px solid var(--rule); }
+.hero { padding: 80px 0 60px; border-bottom: 1px solid var(--rule); }
 .hero h1 {
   font-family: var(--font-display); font-weight: 100;
-  font-size: clamp(56px, 10vw, 120px); line-height: 1.0; letter-spacing: -0.01em;
-  color: var(--champagne); margin: 0 0 20px; text-wrap: balance;
+  font-size: clamp(44px, 12vw, 120px); line-height: 1.06; letter-spacing: 0;
+  color: var(--champagne); margin: 0 0 24px; text-wrap: balance; max-width: 16ch;
 }
 .hero h1 strong { font-weight: 600; color: var(--gold); }
 .hero .standfirst { font-size: 17px; color: var(--muted); max-width: 56ch; margin: 0 0 8px; }
@@ -126,13 +126,13 @@ a { color: var(--gold); text-decoration: none; }
 }
 
 /* Sections */
-section.block { padding: 56px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 110px; }
+section.block { padding: 72px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 110px; }
 h2.section-title {
   font-family: var(--font-display); font-weight: 300;
-  font-size: clamp(40px, 5.5vw, 60px); line-height: 1.05;
-  color: var(--champagne); margin: 0 0 10px; text-wrap: balance;
+  font-size: clamp(32px, 8vw, 60px); line-height: 1.1;
+  color: var(--champagne); margin: 0 0 12px; text-wrap: balance; max-width: 20ch;
 }
-.section-lede { color: var(--muted); margin: 0 0 36px; max-width: 62ch; }
+.section-lede { color: var(--muted); margin: 0 0 40px; max-width: 62ch; }
 
 /* Work: ruled rows, not cards */
 .work-row {
@@ -199,12 +199,11 @@ footer.site-footer { padding: 28px 0 max(96px, env(safe-area-inset-bottom)); col
 
 /* Tablet / desktop */
 @media (min-width: 760px) {
-  .container { padding: 0 32px; }
+  .container { padding: 0 40px; }
+  .hero { padding: 120px 0 88px; }
   .duo { grid-template-columns: 1fr 1fr; }
   .work-row { grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline; }
-  .svc { grid-template-columns: 240px 1fr; gap: 24px; align-items: baseline; }
-  section.block { padding: 88px 0; }
-  .hero { padding: 110px 0 80px; }
+  section.block { padding: 96px 0; }
 }
 @media (pointer: coarse) {
   .btn { min-height: 52px; }
